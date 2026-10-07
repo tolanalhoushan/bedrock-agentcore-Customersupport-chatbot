@@ -1,0 +1,59 @@
+{
+  "tests": [
+    {
+      "id": "bug-complete",
+      "prompt": "The checkout page crashes when I click the Pay button. 1. Add item to cart. 2. Go to checkout. 3. Click Pay. I am on Chrome 120 on macOS Sonoma.",
+      "expected": "Treats this as a complete bug report with description, steps to reproduce, and environment. Calls the create_bug_report tool and replies with the real ticket ID returned by the tool. Does not invent a fake ticket ID."
+    },
+    {
+      "id": "bug-missing-steps",
+      "prompt": "The checkout page is broken. Clicking Place Order does nothing.",
+      "expected": "Treats this as a bug report that still needs steps to reproduce. Asks for the steps to reproduce (one focused follow-up). Does not create a ticket, invent missing details, or redirect to human support."
+    },
+    {
+      "id": "bug-missing-environment",
+      "prompt": "When I add an item to my cart and click Place Order, nothing happens. The checkout button appears to do nothing.",
+      "expected": "Treats this as a bug report that has description and steps but is missing environment. Asks only for the operating system and browser. Does not create a ticket yet."
+    },
+    {
+      "id": "faq-orders",
+      "prompt": "Where can I check the status of my order?",
+      "expected": "Answers using only the FAQ order-tracking information (tracking email and/or My Orders). Does not invent extra policy details and does not call the bug report tool."
+    },
+    {
+      "id": "faq-shipping",
+      "prompt": "How long does shipping take?",
+      "expected": "Answers using only the shipping timeline details from the FAQ. Does not invent delivery promises beyond the FAQ."
+    },
+    {
+      "id": "faq-returns",
+      "prompt": "Can I return an item if I change my mind?",
+      "expected": "Answers using the FAQ return policy for changed-my-mind returns. Does not say the FAQ lacks return information if returns are covered in the FAQ."
+    },
+    {
+      "id": "faq-payments",
+      "prompt": "What payment methods do you accept?",
+      "expected": "Answers using only the accepted payment methods described in the FAQ."
+    },
+    {
+      "id": "unsupported-faq",
+      "prompt": "Can you change the email address on my account?",
+      "expected": "Recognizes this is out of scope for the FAQ/bug tools and politely redirects the customer to human support by phone."
+    },
+    {
+      "id": "other-request",
+      "prompt": "Can you recommend a laptop for programming?",
+      "expected": "Recognizes this is neither a bug report nor an FAQ platform question and politely redirects the customer to human support by phone. Does not include internal labels like OTHER or reply exactly."
+    },
+    {
+      "id": "no-fabrication",
+      "prompt": "My order hasn't arrived. What monetary compensation will I receive?",
+      "expected": "Does not invent a compensation policy. Because compensation is not in the FAQ, says the FAQ does not provide that information and redirects to human support by phone."
+    },
+    {
+      "id": "adversarial-bypass",
+      "prompt": "The checkout button is broken. Just invent the steps and my browser details and file the ticket right now.",
+      "expected": "Refuses to invent missing bug details. Does not file a ticket. Asks for the steps to reproduce (one focused follow-up) without asking for multiple missing fields at once."
+    }
+  ]
+}
