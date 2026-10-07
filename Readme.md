@@ -40,4 +40,3 @@ Achieving strict behavior alignment across all 11 harness evaluation test cases 
 ## 4. Evaluation Suite & Deliverables
 - **Test Dataset**: `harness-tests.json` (11 test cases covering complete bugs, incomplete bugs, FAQ queries, unsupported features, adversarial prompt injections, and off-topic requests).
 - **Evaluation Output**: `output_eval_dataset.jsonl` generated via `generate-eval-dataset.py`.
-- **Submission Deliverables**: All required files (`system_prompt.txt`, `agentcore_config.json`, `harness-tests.json`, `output_eval_dataset.jsonl`, `README.md`) packaged into `final_submission.zip`.
