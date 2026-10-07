@@ -1,0 +1,18 @@
+you> The checkout button is broken.
+bot> What steps do you take to reproduce the issue?
+
+you> 1. Add item to cart. 2. Go to checkout. 3. Click Place Order.
+bot> What operating system and browser are you using?
+
+you> Chrome 120 on macOS Sonoma.
+bot> [tool call] bugreports___create_bug_report
+Thank you for the information. I have created a bug report with the ticket ID e7ec9b6a-c26e-43af-9f68-3a7e518fd4a4. Our team will investigate the issue.
+
+you> How long does shipping take?
+bot> Estimated delivery times are shown at checkout and in your shipping confirmation email. Processing typically takes 1–2 business days before dispatch.
+
+you> Do you sell gift cards?
+bot> Please contact human support by phone for assistance with this request.
+
+you> What's the weather like in Paris today?
+bot> Please contact human support by phone for assistance with this request.
